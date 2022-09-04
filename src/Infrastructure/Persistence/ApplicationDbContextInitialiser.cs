@@ -21,13 +21,13 @@ public class ApplicationDbContextInitialiser
         _roleManager = roleManager;
     }
 
-    public async Task InitialiseAsync()
+    public void /*async Task*/ InitialiseAsync()
     {
         try
         {
             if (_context.Database.IsSqlServer())
             {
-                await _context.Database.MigrateAsync();
+                // await _context.Database.MigrateAsync();
             }
         }
         catch (Exception ex)
